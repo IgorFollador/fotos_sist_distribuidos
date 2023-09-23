@@ -1,7 +1,7 @@
 <?php 
   require 'vendor/autoload.php';
   include('config.php');
-
+  include('database.php');
   use Aws\S3\S3Client;
   #ini_set('display_errors',1);
   #ini_set('display_startup_erros',1);
@@ -24,7 +24,17 @@
   ?>
 
   <h1>Fotos URI</h1>
-
+  <div>
+    <h2>Usuários:</h2>
+    <ul>
+    <?php
+      $result = mysqli_query($conn, 'SELECT * FROM pessoa');
+      foreach ($result as $data) {
+        echo "<li>ID: {$data['id']} | NOME: {$data['nome']}</li>";
+      }
+    ?>
+    </ul>
+  </div>
   <?php
     $s3 = new S3Client([
       'version' => 'latest',
