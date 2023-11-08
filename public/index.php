@@ -41,6 +41,10 @@ $s3 = new S3Client([
 
   <h1>Fotos URI</h1>
   <div>
+    <h3>Informações do Servidor:</h3>
+    <p>Endereço IP do Servidor: <?php echo $_SERVER['SERVER_ADDR']; ?></p>
+  </div>
+  <div>
     <h2>Usuários:</h2>
     <ul>
     <?php

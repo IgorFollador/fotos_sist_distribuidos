@@ -6,14 +6,6 @@ RUN apt-get update && \
 
 COPY ./public/ /var/www/html/
 
-ENV DB_HOST=""
-ENV DB_USER=""
-ENV DB_PASSWORD=""
-ENV DB_NAME=""
-ENV ACCESS_KEY=""
-ENV SECRET_KEY=""
-ENV BUCKET_NAME=""
-
 EXPOSE 80
 
 CMD ["apache2-foreground"]
